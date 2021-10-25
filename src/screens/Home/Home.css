@@ -1,0 +1,17 @@
+.Home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+  margin: 0px auto;
+  /* background: rgb(238,196,0);
+  background: linear-gradient(320deg, rgba(238,196,0,1) 0%, rgba(0,0,0,1) 58%); */
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 25px;
+  /*border: 3px solid black;*/
+  border: none;
+  box-shadow: 0px 0px 2px black;
+}
