@@ -5,6 +5,7 @@ import DescriptionImg2 from '../../assets/fork2-wbg.png'
 import DescriptionImg3 from '../../assets/fork4-wbg.png'
 
 import './DescriptionProduct.css'
+import { NavLink } from "react-router-dom";
 
 const DescriptionProduct = () => {
   return (
@@ -19,7 +20,7 @@ const DescriptionProduct = () => {
             <h3>
               Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
             </h3>
-            <button className='description-product-button'>Acheter</button>
+            <NavLink to='/buy-product'><button className='description-product-button'>Acheter</button></NavLink>
           </div>
         </div>
         <div className='description-product-container-two'>
@@ -28,7 +29,7 @@ const DescriptionProduct = () => {
             <h3>
               Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
             </h3>
-            <button className='description-product-button'>Acheter</button>
+            <NavLink to='/buy-product'><button className='description-product-button'>Acheter</button></NavLink>
           </div>
           <div className='description-product-image-container'>
             <img src={DescriptionImg3} alt="first description fork" />

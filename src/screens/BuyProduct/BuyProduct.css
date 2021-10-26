@@ -1,0 +1,159 @@
+.BuyProduct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  overflow-y: hidden;
+  margin: 0px auto;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0px 0px 5px -2px black;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.BuyProduct::-webkit-scrollbar {
+  display: none;
+}
+
+.buy-product-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  /* margin-top: 8vh;
+  margin-bottom: 10vh; */
+}
+
+.buy-product-image-container {
+  width: 40%;
+}
+
+.buy-product-main-image {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.buy-product-mini-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.buy-product-main-image > img{
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px -2px black;
+}
+
+.buy-product-option-container {
+  border-radius: 25px 25px;
+  width: 45%;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 5px -3px black;
+}
+
+.buy-product-quantity label {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buy-product-radio-color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.buy-product-color-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+}
+
+.buy-product-color-container input {
+  position: absolute;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.buy-product-color-label {
+  position: absolute;
+}
+
+.radio-color {
+  cursor: pointer;
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.2s linear;
+}
+
+.radio-color-black {
+  background-color: black;
+}
+
+.radio-color-blue {
+  background-color: blue;
+}
+
+.radio-color-red {
+  background-color: red;
+}
+
+.buy-product-color-container:hover input ~ .radio-color{
+  box-shadow: 0px 0px 3px 5px silver;
+}
+
+.buy-product-color-container input:checked ~ .radio-color{
+  box-shadow: 0px 0px 3px 5px gold;
+}
+
+.buy-product-price {
+  margin-top: 50px;
+}
+
+.buy-product-price h4{
+  font-weight: bold;
+}
+
+.buy-product-price button {
+  cursor: pointer;
+  background-color: orange;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border:none;
+  box-shadow: 0px 0px 5px -3px black;
+  transition: 0.2s linear;
+}
+
+.buy-product-price button:hover {
+  background-color: black;
+  color: orange;
+  transform: scale(1.2);
+}
+
+.previous-price {
+  color: red;
+  font-weight: lighter;
+  text-decoration:line-through;
+  margin-right: 10px;
+}

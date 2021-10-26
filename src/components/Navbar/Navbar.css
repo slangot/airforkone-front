@@ -8,13 +8,16 @@
   margin-top: 20px;
 }
 
-.Navbar a {
+.Navbar a{
   text-decoration: none;
   color: black;
+}
+
+.menu-link-nav, .menu-link-buy, .menu-link-cart {
   transition: 0.2s linear;
 }
 
-.Navbar a:hover {
+.Navbar .menu-link-nav:hover {
   color: orange;
   text-shadow: 0px 0px orange;
   transform: scale(1.1);
@@ -54,4 +57,25 @@
 .navbar-menu-container .menu-link-buy:hover {
   background-color: black;
   color: orange;
+}
+
+.navbar-menu-container .menu-link-cart {
+  position: absolute;
+  background-color: black;
+  color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  top: -10px;
+  right: -40px;
+}
+
+.menu-link-cart svg {
+  width: 2em;
+  height: 2em;
+}
+
+.menu-link-cart:hover {
+  top: -10px;
+  right: -40px;
+  background-color: white;
 }

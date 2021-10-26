@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import './Home.css'
 
 import HomeImg from '../../assets/fork-kid1.jpg'
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
             <h3>
               Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
             </h3>
-            <button>Découvrir</button>
+            <NavLink to='/description-product'><button>Découvrir</button></NavLink>
           </div>
         </div>
       </div>
