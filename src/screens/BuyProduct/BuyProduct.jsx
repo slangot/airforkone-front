@@ -16,7 +16,7 @@ const BuyProduct = () => {
 
   const images = [BuyImg1, BuyImg2, BuyImg3, BuyImg4, BuyImg5]
 
-  const [currentPhoto, setCurrentPhoto] = useState(images[0])
+  const [currentPhoto, setCurrentPhoto] = useState(BuyImg1)
   const [currentQuantity, setCurrentQuantity] = useState(1)
   const [currentColor, setCurrentColor] = useState()
 
@@ -31,7 +31,7 @@ const BuyProduct = () => {
             <img src={currentPhoto} alt='main product' />
           </div>
           <div className='buy-product-mini-container'>
-            {images.map(i => <ProductCard url={i} />)}
+            {images.map((i, index) => <ProductCard key={index} url={i} setImage={setCurrentPhoto} />)}
           </div>
         </div>
         <div className='buy-product-option-container'>
