@@ -1,15 +1,19 @@
 .ProductCard {
   position: relative;
   width: 100px;
-  height: 80px;
+  /* height: 80px; */
   background-color: rgba(255,255,255,0.5);
-  border-radius: 25px;
+  border-radius: 10px;
   box-shadow: 0px 0px 5px -3px;
   margin: 5px;
   overflow: hidden;
 }
 
 .ProductCard img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
   width: 100%;
   object-fit: cover;

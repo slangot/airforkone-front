@@ -31,10 +31,26 @@ const BuyProduct = () => {
     })
   } else {
     const incomingPurchase = {
-      'quantity': currentQuantity,
-      'color': currentColor,
-      'price': Number.parseFloat(currentQuantity * 49.99).toFixed(2)
+      name: 'Air Fork One',
+      quantity: currentQuantity,
+      color: currentColor,
+      price: Number.parseFloat(currentQuantity * 49.99).toFixed(2)
     }
+    if(localStorage.getItem('waiting_order')) {
+      let waitingOrder = localStorage.getItem('waiting_order')
+       console.log(typeof waitingOrder, waitingOrder)
+      // const ordersList = []
+    /*  
+      waitingOrder.map(e => ordersList.push(e))
+      ordersList.push(incomingPurchase)
+      localStorage.setItem('waiting_order', ordersList)
+    */
+    } else {
+      const ordersList = [incomingPurchase]
+      // localStorage.setItem('waiting_order', ordersList)
+      localStorage.setItem('waiting_order', incomingPurchase)
+    }
+    
     Swal.fire({
       title: 'Bien ajouté',
       html: 'Votre produit a bien été ajouté à votre panier',
@@ -46,7 +62,12 @@ const BuyProduct = () => {
       cancelButtonText: 'Retour au produit',
       confirmButtonText: 'Voir mon panier'
     })
+    /*
     console.log(incomingPurchase)
+    const testOrder = localStorage.getItem('waiting_order')
+    testOrder.map(test => console.log(test)) 
+    */
+
   }
   
   }

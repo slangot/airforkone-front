@@ -16,19 +16,21 @@ const DescriptionProduct = () => {
             <img src={DescriptionImg2} alt="first description fork" />
           </div>
           <div className='description-product-info-container'>
-            <h1><span className='description-product-info-orange'>A</span>ir <span className='home-description-title-orange'>F</span>ork <span className='home-description-title-orange'>One</span></h1>
-            <h3>
-              Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
-            </h3>
+            <h2><span className='description-product-info-orange'>A</span>ir <span className='home-description-title-orange'>F</span>ork <span className='home-description-title-orange'>One</span></h2>
+            <p>
+              Les technologies les plus innovantes des domaines de l'aérospatial, de la gastronomie moléculaire et du design futuriste concentrées dans un même et unique produit.<br />
+              Voilà ce qui caractérise Air Fork One.<br />
+              L'essayer c'est l'adopter !
+            </p>
             <NavLink to='/buy-product'><button className='description-product-button'>Acheter</button></NavLink>
           </div>
         </div>
         <div className='description-product-container-two'>
           <div className='description-product-info-container'>
-            <h1><span className='description-product-info-orange'>A</span>ir <span className='home-description-title-orange'>F</span>ork <span className='home-description-title-orange'>One</span></h1>
-            <h3>
+            <h2><span className='description-product-info-orange'>A</span>ir <span className='home-description-title-orange'>F</span>ork <span className='home-description-title-orange'>One</span></h2>
+            <p>
               Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
-            </h3>
+            </p>
             <NavLink to='/buy-product'><button className='description-product-button'>Acheter</button></NavLink>
           </div>
           <div className='description-product-image-container'>
