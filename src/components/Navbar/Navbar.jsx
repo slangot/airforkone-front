@@ -5,11 +5,31 @@ import { BsCartPlus } from 'react-icons/bs'
 import Logo from '../../assets/logo1-wbg.png'
 
 import './Navbar.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
 
   const [cartNumber, setCartNumber] = useState(0)
+
+  const ordersTest = localStorage.getItem('waiting_order')
+  
+  useEffect(() => {
+
+    const setNumberOfOrders = (number) => {
+      setCartNumber(number)
+    }
+
+    if(localStorage.getItem('waiting_order')) {
+      const listOfOrders = JSON.parse(localStorage['waiting_order'])
+      const numberOfOrders = listOfOrders.length
+      setNumberOfOrders(numberOfOrders)
+      console.log(listOfOrders.length)  
+    }
+  }, [ordersTest])
+
+  
+
+  
 
   return (
     <div className='Navbar'>

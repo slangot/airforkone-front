@@ -37,19 +37,21 @@ const BuyProduct = () => {
       price: Number.parseFloat(currentQuantity * 49.99).toFixed(2)
     }
     if(localStorage.getItem('waiting_order')) {
-      let waitingOrder = localStorage.getItem('waiting_order')
+      // let waitingOrder = localStorage.getItem('waiting_order')
+      let waitingOrder = JSON.parse(localStorage['waiting_order'])
        console.log(typeof waitingOrder, waitingOrder)
-      // const ordersList = []
-    /*  
+      const ordersList = []
+
       waitingOrder.map(e => ordersList.push(e))
       ordersList.push(incomingPurchase)
-      localStorage.setItem('waiting_order', ordersList)
-    */
+      localStorage['waiting_order'] = JSON.stringify(ordersList)
+
     } else {
       const ordersList = [incomingPurchase]
-      // localStorage.setItem('waiting_order', ordersList)
-      localStorage.setItem('waiting_order', incomingPurchase)
+      localStorage['waiting_order'] = JSON.stringify(ordersList)
     }
+
+    console.log(incomingPurchase)
     
     Swal.fire({
       title: 'Bien ajouté',
@@ -71,8 +73,6 @@ const BuyProduct = () => {
   }
   
   }
-
-  console.log(currentColor)
 
   return (
     <div className='BuyProduct'>
