@@ -37,9 +37,7 @@ const BuyProduct = () => {
       price: Number.parseFloat(currentQuantity * 49.99).toFixed(2)
     }
     if(localStorage.getItem('waiting_order')) {
-      // let waitingOrder = localStorage.getItem('waiting_order')
       let waitingOrder = JSON.parse(localStorage['waiting_order'])
-       console.log(typeof waitingOrder, waitingOrder)
       const ordersList = []
 
       waitingOrder.map(e => ordersList.push(e))
@@ -50,8 +48,6 @@ const BuyProduct = () => {
       const ordersList = [incomingPurchase]
       localStorage['waiting_order'] = JSON.stringify(ordersList)
     }
-
-    console.log(incomingPurchase)
     
     Swal.fire({
       title: 'Bien ajouté',
@@ -64,11 +60,6 @@ const BuyProduct = () => {
       cancelButtonText: 'Retour au produit',
       confirmButtonText: 'Voir mon panier'
     })
-    /*
-    console.log(incomingPurchase)
-    const testOrder = localStorage.getItem('waiting_order')
-    testOrder.map(test => console.log(test)) 
-    */
 
   }
   
