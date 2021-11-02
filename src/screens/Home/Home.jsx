@@ -14,7 +14,7 @@ const Home = () => {
             <img src={HomeImg} alt="main kid fork" />
           </div>
           <div className='home-description-container'>
-            <h1><span className='home-description-title-orange'>A</span>ir <span className='home-description-title-orange'>F</span>ork <span className='home-description-title-orange'>One</span></h1>
+            <h1>Air Fork One</h1>
             <h3>
               Découvrez la première fourchette avion qui vous mettra sur un nuage lors des repas
             </h3>

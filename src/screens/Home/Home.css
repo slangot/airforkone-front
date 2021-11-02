@@ -43,6 +43,8 @@
 
 .home-description-container h1 {
   font-size: 3rem;
+  text-decoration: underline;
+  text-decoration-color: orange;
 }
 
 .home-description-title-orange {

@@ -59,7 +59,7 @@ const BuyProduct = () => {
       cancelButtonColor: 'silver',
       cancelButtonText: 'Retour au produit',
       confirmButtonText: 'Voir mon panier'
-    })
+    }).then(() => window.location = 'http://localhost:3000/cart')
 
   }
   
