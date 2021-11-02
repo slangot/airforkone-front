@@ -7,34 +7,36 @@ import Swal from "sweetalert2";
 import Produit from "../../assets/fork2-wbg.png"
 
 import './Cart.css'
-import { useState } from "react";
 
 const Cart = () => {
 
-  const [qtyBlack, setQtyBlack] = useState(0)
-  const [qtyBlue, setQtyBlue] = useState(0)
-  const [qtyRed, setQtyRed] = useState(0)
 
   let currentShoppingList = null
-  let totalPrice = 0
+  let qtyBlue = 0
+  let qtyBlack = 0
+  let qtyRed = 0
+  let totalPriceHT = 0
   let totalTVA = 0
+  let totalPrice = 0
 
-  if(localStorage.getItem('waiting_order')) {
-    currentShoppingList = JSON.parse(localStorage['waiting_order'])
-    currentShoppingList.map((e) =>
-      {
-        totalPrice += parseFloat(e.price)
-        totalTVA = totalPrice * 0.2
-        // if(e.color === 'bleu') {
-        //   setQtyBlue(qtyBlue => [..., e.quantity])
-        // } else if(e.color === 'noir') {
-        //   setQtyBlack(qtyBlack + e.quantity)
-        // } else if(e.color === 'rouge') {
-        //   setQtyRed(qtyRed + e.quantity)
-        // }
-        
-      })
-  }
+    if(localStorage.getItem('waiting_order')) {
+      currentShoppingList = JSON.parse(localStorage['waiting_order'])
+      currentShoppingList.map((e, index) =>
+        {console.log(e.quantity)
+          totalPriceHT += parseFloat(e.price)
+          totalTVA = totalPriceHT * 0.2
+          totalPrice = totalPriceHT + totalTVA
+          if(e.color === 'blue') {
+            qtyBlue += parseInt(e.quantity)
+          }
+           else if(e.color === 'black') {
+            qtyBlack += parseInt(e.quantity)
+          }
+           else if(e.color === 'red') {
+            qtyRed += parseInt(e.quantity)
+          }
+        })
+    }
 
   const handleRemoveOrder = (e) => {
     console.log(e)
@@ -47,18 +49,25 @@ const Cart = () => {
   }).then(() => window.location = ('/cart'))
    
   }
-/*
+
   const handleValidOrder = () => {
     const addData = async () => {
-      const resData = await axios.post('http://localhost:3000', {
+      const resData = await axios.post('http://localhost:3000/cart', {
         product: 'Air Fork One',
-        qtyBlack: qtyBlack,
-        qtyBlue: qtyBlue,
-        qtyRed: qtyRed
+        qtyBlack: parseInt(qtyBlack),
+        qtyBlue: parseInt(qtyBlue),
+        qtyRed: parseInt(qtyRed),
+        totalPrice: parseInt(totalPrice)
       })
+      Swal.fire({
+        title: 'Panier validé',
+        icon: 'success',
+        confirmButtonText: 'Procéder au paiement'
+      }).then(() => window.location = ('/cart'))
     }
+    addData()
   }
-*/
+
   return (
     <div className='Cart'>
       <Navbar />
@@ -86,23 +95,23 @@ const Cart = () => {
             </div>)}
           <div className='cart-total-container'>
             <div className='cart-total-info'>
-              <p>Sous total : {totalPrice.toFixed(2)}€</p>
+              <p>Sous total : {totalPriceHT.toFixed(2)}€</p>
               <p>Livraison : GRATUITE</p>
             </div>
 
             <div className='cart-total-price'>
-              <h4>Votre total : {(totalPrice + totalTVA).toFixed(2)}€</h4>
+              <h4>Votre total : {(totalPriceHT + totalTVA).toFixed(2)}€</h4>
               <p>TVA de 20% ({(totalTVA).toFixed(2)}€) incluse</p>
             </div>
 
           </div>
-          <button className='cart-btn cart-confirm-btn'>Valider la commande</button>
+          <button className='cart-btn cart-confirm-btn' onClick={handleValidOrder}>Valider la commande</button>
         </>
         : 
         
         <>
           <h3>Vide</h3>
-          <NavLink to='product'><button className='cart-btn cart-return-btn'>Retour au produit</button></NavLink>
+          <NavLink to='buy-product'><button className='cart-btn cart-return-btn'>Retour au produit</button></NavLink>
         </>
         }
 

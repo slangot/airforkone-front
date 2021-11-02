@@ -59,7 +59,7 @@ const BuyProduct = () => {
       cancelButtonColor: 'silver',
       cancelButtonText: 'Retour au produit',
       confirmButtonText: 'Voir mon panier'
-    }).then(() => window.location = 'http://localhost:3000/cart')
+    }).then(() => window.location = '/cart')
 
   }
   
@@ -94,13 +94,13 @@ const BuyProduct = () => {
             </div>
             <div className='buy-product-color-container'>
               <label className='buy-product-color-label'>
-                <input type='radio' value='bleu' name='color' />
+                <input type='radio' value='blue' name='color' />
                 <span className='radio-color radio-color-blue'></span>
               </label>
             </div>
             <div className='buy-product-color-container'>
               <label className='buy-product-color-label'>
-                <input type='radio' value='rouge' name='color' />
+                <input type='radio' value='red' name='color' />
                 <span className='radio-color radio-color-red'></span>
               </label>
             </div>
