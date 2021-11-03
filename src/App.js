@@ -1,5 +1,6 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import AdminOrders from './screens/AdminOrders/AdminOrders';
 import BuyProduct from './screens/BuyProduct/BuyProduct';
 import Cart from './screens/Cart/Cart';
 import DescriptionProduct from './screens/DescriptionProduct/DescriptionProduct';
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path='/cart' exact>
           <Cart />
+        </Route>
+        <Route path='/admin' exact>
+          <AdminOrders />
         </Route>
       </BrowserRouter>
     </div>
